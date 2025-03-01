@@ -1,76 +1,28 @@
-# Computational beam optics
+#       Computational optics library
 
-Authors: [Carlos Antunis Bonfim da S. Santos](https://github.com/carlos-antunis-physics) & [Carlos Eduardo da S. Santana](https://github.com/caduAa)
+![Python programming language](https://img.shields.io/badge/Python-white.svg?logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48bGluZWFyR3JhZGllbnQgaWQ9InB5dGhvbi1vcmlnaW5hbC1hIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjcwLjI1MiIgeTE9IjEyMzcuNDc2IiB4Mj0iMTcwLjY1OSIgeTI9IjExNTEuMDg5IiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KC41NjMgMCAwIC0uNTY4IC0yOS4yMTUgNzA3LjgxNykiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzVBOUZENCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzMwNjk5OCIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJweXRob24tb3JpZ2luYWwtYiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyMDkuNDc0IiB5MT0iMTA5OC44MTEiIHgyPSIxNzMuNjIiIHkyPSIxMTQ5LjUzNyIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCguNTYzIDAgMCAtLjU2OCAtMjkuMjE1IDcwNy44MTcpIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNGRkQ0M0IiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkU4NzMiLz48L2xpbmVhckdyYWRpZW50PjxwYXRoIGZpbGw9InVybCgjcHl0aG9uLW9yaWdpbmFsLWEpIiBkPSJNNjMuMzkxIDEuOTg4Yy00LjIyMi4wMi04LjI1Mi4zNzktMTEuOCAxLjAwNy0xMC40NSAxLjg0Ni0xMi4zNDYgNS43MS0xMi4zNDYgMTIuODM3djkuNDExaDI0LjY5M3YzLjEzN0gyOS45NzdjLTcuMTc2IDAtMTMuNDYgNC4zMTMtMTUuNDI2IDEyLjUyMS0yLjI2OCA5LjQwNS0yLjM2OCAxNS4yNzUgMCAyNS4wOTYgMS43NTUgNy4zMTEgNS45NDcgMTIuNTE5IDEzLjEyNCAxMi41MTloOC40OTFWNjcuMjM0YzAtOC4xNTEgNy4wNTEtMTUuMzQgMTUuNDI2LTE1LjM0aDI0LjY2NWM2Ljg2NiAwIDEyLjM0Ni01LjY1NCAxMi4zNDYtMTIuNTQ4VjE1LjgzM2MwLTYuNjkzLTUuNjQ2LTExLjcyLTEyLjM0Ni0xMi44MzctNC4yNDQtLjcwNi04LjY0NS0xLjAyNy0xMi44NjYtMS4wMDh6TTUwLjAzNyA5LjU1N2MyLjU1IDAgNC42MzQgMi4xMTcgNC42MzQgNC43MjEgMCAyLjU5My0yLjA4MyA0LjY5LTQuNjM0IDQuNjktMi41NiAwLTQuNjMzLTIuMDk3LTQuNjMzLTQuNjktLjAwMS0yLjYwNCAyLjA3My00LjcyMSA0LjYzMy00LjcyMXoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMTAuMjYpIi8+PHBhdGggZmlsbD0idXJsKCNweXRob24tb3JpZ2luYWwtYikiIGQ9Ik05MS42ODIgMjguMzh2MTAuOTY2YzAgOC41LTcuMjA4IDE1LjY1NS0xNS40MjYgMTUuNjU1SDUxLjU5MWMtNi43NTYgMC0xMi4zNDYgNS43ODMtMTIuMzQ2IDEyLjU0OXYyMy41MTVjMCA2LjY5MSA1LjgxOCAxMC42MjggMTIuMzQ2IDEyLjU0NyA3LjgxNiAyLjI5NyAxNS4zMTIgMi43MTMgMjQuNjY1IDAgNi4yMTYtMS44MDEgMTIuMzQ2LTUuNDIzIDEyLjM0Ni0xMi41NDd2LTkuNDEySDYzLjkzOHYtMy4xMzhoMzcuMDEyYzcuMTc2IDAgOS44NTItNS4wMDUgMTIuMzQ4LTEyLjUxOSAyLjU3OC03LjczNSAyLjQ2Ny0xNS4xNzQgMC0yNS4wOTYtMS43NzQtNy4xNDUtNS4xNjEtMTIuNTIxLTEyLjM0OC0xMi41MjFoLTkuMjY4ek03Ny44MDkgODcuOTI3YzIuNTYxIDAgNC42MzQgMi4wOTcgNC42MzQgNC42OTIgMCAyLjYwMi0yLjA3NCA0LjcxOS00LjYzNCA0LjcxOS0yLjU1IDAtNC42MzMtMi4xMTctNC42MzMtNC43MTkgMC0yLjU5NSAyLjA4My00LjY5MiA0LjYzMy00LjY5MnoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMTAuMjYpIi8+PHJhZGlhbEdyYWRpZW50IGlkPSJweXRob24tb3JpZ2luYWwtYyIgY3g9IjE4MjUuNjc4IiBjeT0iNDQ0LjQ1IiByPSIyNi43NDMiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMCAtLjI0IC0xLjA1NSAwIDUzMi45NzkgNTU3LjU3NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNCOEI4QjgiIHN0b3Atb3BhY2l0eT0iLjQ5OCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzdGN0Y3RiIgc3RvcC1vcGFjaXR5PSIwIi8+PC9yYWRpYWxHcmFkaWVudD48cGF0aCBvcGFjaXR5PSIuNDQ0IiBmaWxsPSJ1cmwoI3B5dGhvbi1vcmlnaW5hbC1jKSIgZD0iTTk3LjMwOSAxMTkuNTk3YzAgMy41NDMtMTQuODE2IDYuNDE2LTMzLjA5MSA2LjQxNi0xOC4yNzYgMC0zMy4wOTItMi44NzMtMzMuMDkyLTYuNDE2IDAtMy41NDQgMTQuODE1LTYuNDE3IDMzLjA5Mi02LjQxNyAxOC4yNzUgMCAzMy4wOTEgMi44NzIgMzMuMDkxIDYuNDE3eiIvPjwvc3ZnPgo=)
+![numpy: 2.1.3](https://img.shields.io/badge/numpy-2.1.3-white?style=plastic)
+![scipy: 1.15.1](https://img.shields.io/badge/scipy-1.15.1-white?style=plastic)
+![scipy: 8.2](https://img.shields.io/badge/sympy-1.13.1-white?style=plastic)
 
-![Python](https://img.shields.io/badge/Python-3572A5?style=plastic)
-![Fortran](https://img.shields.io/badge/Fortran-4d41b1?style=plastic)
-![numpy: 1.26.4](https://img.shields.io/badge/numpy-1.26.4-3572A5?style=plastic)
-![scipy: 8.2](https://img.shields.io/badge/scipy-8.2-3572A5?style=plastic)
-![matplotlib: 3.8.3](https://img.shields.io/badge/matplotlib-3.8.3-3572A5?style=plastic)
-![ipython: 8.22.2](https://img.shields.io/badge/ipython-8.22.2-3572A5?style=plastic)
-![scikit-image: 0.24.0](https://img.shields.io/badge/scikit--image-0.24.0-3572A5?style=plastic)
+>   **Authors:** [Carlos Antunis Bonfim da Silva Santos](https://github.com/carlos-antunis-physics/) and [Carlos Eduardo da Silva Santana](https://github.com/caduAa/)
+>
+>   This project is licensed under [MIT License](./LICENSE).
+>
+>   This repository provides some jupyter notebook with [basic usage examples](./examples/README.md).
 
-## Computational optics python module
+##      About this library
 
-Understanding how to properly control light, besides a scientific research area of enormous impact, is an important source of novel technological applications. Provide a general analytical method which also encompass non-linear effects of optical media is impossible, thus numerical methods are widely applied both to estimate how light propagation is disturbed by optical responses (even the non-linear ones) of optical devices and design themselves.
+Understand how to control light represents a research area of significant impact nowadays, driven largely by the emergence of quantum technologies as a prominent source of novel applications. This library aims to provide an understable framework in `python` for academic research on classical and quantum optics mainly designed for experimentalists.
 
-### About this python module
+###     computational classical optics features
 
-> The python module developed in this repo is widely inspired on [FiniteDiferenceBPM](https://github.com/Windier/FiniteDifferenceBPM) repository, implemented by [José Carlos do A. Rocha](https://github.com/Windier).
+>   The submodule for classical optics is widely inspired on [FiniteDifferenceBPM](https://github.com/Windier/FiniteDifferenceBPM/) `MATLAB library` implemented by [José Carlos do Amaral Rocha](https://github.com/Windier/).
 
-Our main goal is to provide a python module with a wide range of computational methods used in our academic researchs at the **Optics and Nanoscopy Group** ([GON](https://if.ufal.br/grupopesquisa/gon/index_en.html)). Besides some utils algorithms of phase optimization, the most of the algorithms arrenged here consists of methods to estimate the solutions of a Dirichlet Boundary Value Problem (BVP) for inhomogeneous non-linear elliptical partial differential equations such as
+- **Symbolic manipulation of modes.** Robust tools on algebraic manipulation of free-space expression of classical modes which allows also numerical evaluations.
+- **Numerical propagation of fields.** Fourier and Finite-Differences beam propagation methods to estimate waveguides and nonlinear responses effects on light propagation in the paraxial approximation.
+- **Phase optimization.** Numerical methods on phase optimization to implement unitary transformations over classical light.
 
-$$
-    \jmath\partial_z\psi(\textbf{r},z) = \frac{1}{2\kappa}\nabla^2_\perp\psi(\textbf{r},z) + \Delta{n}(\textbf{r},z)\psi(\textbf{r},z) + \mathrm{N}(\psi(\textbf{r},z))\psi(\textbf{r},z)\text{,}
-$$
+###     computational quantum optics features
 
-defined here as non-linear and inhomogeneous Helmholtz paraxial equation.
-
-### Installing the python module on your personal computer
-
-To obtain the python module `optical` provided by this repository, ensuring that your computer satisfy the required dependencies (listed in the [top of this `README`](#computational-beam-optics)), you will need only the `optical/` directory  as the python module on your python application at the `main` branch.
-
-<!-- ```bash
-f2py -m linear_algebra linear_algebra.f95 -h linear_algebra.pyf --overwrite-signature
-f2py -c linear_algebra.pyf linear_algebra.f95
-``` -->
-
-#### Direct download
-
-Download the files on `main` branch directly [here](https://github.com/carlos-antunis-physics/computational-beam-optics/archive/refs/heads/main.zip).
-
-#### Download using `git`
-
-Download the files on `main` branch using `git`:
-
-```bash
-git clone 'https://github.com/carlos-antunis-physics/computational-beam-optics.git'
-```
-
-### Installing the python module in a `Google Colab notebook`
-
-To obtain the python module `optical` provided by this repository on a `Google Colab notebook` add a cell and use the commands:
-
-```python
-from google.colab import output
-
-#  change directory to google colab root directory
-%cd -q /content/
-
-# clone git repository
-!apt-get install git
-%rm -r /content/computational-beam-optics/ /content/optical/
-!git clone 'https://github.com/carlos-antunis-physics/computational-beam-optics'
-
-# obtain python module directory
-%mv ./computational-beam-optics/optical/ ./optical/
-%rm -r ./computational-beam-optics/                 # remove other files
-
-# enable widget visualization
-!pip install ipympl
-output.enable_custom_widget_manager()
-```
-
-<!-- ### Documentation and examples
-
-For usage references, see the [`examples`](./examples/1-elementary/simple.ipynb) provided in this repository or check the [`documentation`](./documentation/main.md). -->
+![under-construction](./under-construction.png)

@@ -9,8 +9,9 @@
 >
 >   This project is licensed under [MIT License](./LICENSE).
 >
+<!---
 >   This repository provides some jupyter notebook with [basic usage examples](./examples/README.md).
-
+-->
 ##      About this library
 
 Understand how to control light represents a research area of significant impact nowadays, driven largely by the emergence of quantum technologies as a prominent source of novel applications. This library aims to provide an understable framework in `python` for academic research on classical and quantum optics mainly designed for experimentalists.

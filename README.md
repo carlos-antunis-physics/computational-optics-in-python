@@ -20,9 +20,9 @@ Understand how to control light represents a research area of significant impact
 
 >   The submodule for classical optics is widely inspired on [FiniteDifferenceBPM](https://github.com/Windier/FiniteDifferenceBPM/) `MATLAB library` implemented by [José Carlos do Amaral Rocha](https://github.com/Windier/).
 
-- **Symbolic manipulation of modes.** Robust tools on algebraic manipulation of free-space expression of classical modes which allows also numerical evaluations.
-- **Numerical propagation of fields.** Fourier and Finite-Differences beam propagation methods to estimate waveguides and nonlinear responses effects on light propagation in the paraxial approximation.
-- **Phase optimization.** Numerical methods on phase optimization to implement unitary transformations over classical light.
+<!-- - **Symbolic manipulation of modes.** Robust tools on algebraic manipulation of free-space expression of classical modes which allows also numerical evaluations. -->
+- **Numerical propagation of fields.** Fourier <!-- and Finite-Differences --> beam propagation methods to estimate waveguides and nonlinear responses effects on light propagation in the paraxial approximation.
+<!-- - **Phase optimization.** Numerical methods on phase optimization to implement unitary transformations over classical light. -->
 
 ###     computational quantum optics features
 

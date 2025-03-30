@@ -7,7 +7,7 @@
 
 >   **Authors:** [Carlos Antunis Bonfim da Silva Santos](https://github.com/carlos-antunis-physics/) and [Carlos Eduardo da Silva Santana](https://github.com/caduAa/)
 >
->   This project is licensed under [GNU General Public License V3](./LICENSE).
+>   This project is licensed under [MIT License](./LICENSE).
 >
 <!---
 >   This repository provides some jupyter notebook with [basic usage examples](./examples/README.md).

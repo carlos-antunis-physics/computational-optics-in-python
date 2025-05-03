@@ -1,4 +1,4 @@
-#       Computational optics library
+#       Computational optics library [Deprecated]
 
 >   **Authors:** [Carlos Antunis Bonfim da Silva Santos](https://github.com/carlos-antunis-physics/) and [Carlos Eduardo da Silva Santana](https://github.com/caduAa/)
 >

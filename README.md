@@ -27,6 +27,6 @@ Understand how to control light represents a research area of significant impact
 
 <div align = "center">
 
-[![under-construction](./under-construction.png)](#)
+[![under-construction](https://github.com/carlos-antunis-physics/carlos-antunis-physics/blob/main/assets/under-construction.png?raw=true)](#)
 
 </div>
